@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 from ProyectoUno.templates.views import saludo
+from ProyectoUno.templates.views import dameFecha
+from ProyectoUno.templates.views import calculoEdad
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo), #es la url que va tener, y la funcion de retorno de la vista
+    path('fecha/', dameFecha),
+    path('edades/<int:agno>', calculoEdad)
 ]
