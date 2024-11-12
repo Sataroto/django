@@ -54,7 +54,7 @@ ROOT_URLCONF = 'ProyectoUno.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/futbo/Documents/Cursos/django/django/ProyectoUno/ProyectoUno/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1>
+            Hola Pilotos es es mi primera pagina con Django
+        </h1>
+        <p>
+        <h2>
+            El nombre de la persona es {{nombre_persona}} {{apellido_persona}}
+        </h2>
+        </p>
+        <p><strong>Temas del curso:</strong></p>
+        <ul>
+            {% if temas%}
+                {% for tema in temas %}
+
+                    <li>{{tema}}</li>
+
+                {% endfor %}
+            {% else %}
+                <p>No hay elementos que mostrar</p>
+            {% endif %}
+        </ul>
+        </body>
+</html>
