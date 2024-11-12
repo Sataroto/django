@@ -21,5 +21,5 @@ from ProyectoUno.templates.views import saludo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludo/', saludo),
+    path('saludo/', saludo), #es la url que va tener, y la funcion de retorno de la vista
 ]
