@@ -1,8 +1,10 @@
 
 from django.http import HttpResponse#importante al querer usar django
-from django.template import Template
-from django.template import Context
 from django.template import loader
+from django.shortcuts import render
+
+
+
 import datetime
 
 
@@ -27,11 +29,13 @@ def saludo(request): #primera vista
     plt=Template(doc_externo.read())
     doc_externo.close()'''
 
-    doc_externo = loader.get_template("saludo.html")
+    #doc_externo = loader.get_template("saludo.html")
     #ctx = Context()
 
-    documento = doc_externo.render({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "temas":temasDelCurso1})
-    return HttpResponse(documento) #las funciones devuelven este tipo de respuiesas para visualizar la pagina
+    #documento = doc_externo.render({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "temas":temasDelCurso1})
+    
+    return render(request, "saludo.html", 
+                {"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "temas":temasDelCurso}) #las funciones devuelven este tipo de respuiesas para visualizar la pagina
 
 def dameFecha(request):
     fecha_actual = datetime.datetime.now()
@@ -54,3 +58,8 @@ def calculoEdad(request, edad,agno):
     documento = "<html><body><h2>En el año %s tendras %s años" %(agno, edadFutura)
 
     return HttpResponse(documento)
+
+def ejemplo(request):
+    fecha_actual = datetime.datetime.now()
+
+    return render(request, "home.html", {"dameFecha": fecha_actual.date()})

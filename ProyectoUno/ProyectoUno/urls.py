@@ -20,10 +20,12 @@ from django.urls import path
 from ProyectoUno.templates.views import saludo
 from ProyectoUno.templates.views import dameFecha
 from ProyectoUno.templates.views import calculoEdad
+from ProyectoUno.templates.views import ejemplo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo), #es la url que va tener, y la funcion de retorno de la vista
     path('fecha/', dameFecha),
-    path('edades/<int:edad>/<int:agno>', calculoEdad)
+    path('edades/<int:edad>/<int:agno>', calculoEdad),
+    path("", ejemplo),
 ]
